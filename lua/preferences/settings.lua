@@ -10,6 +10,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.undofile = true
 
 vim.opt.updatetime = 250
+vim.o.timeout = true
 vim.opt.timeoutlen = 300
 
 -- Display characters

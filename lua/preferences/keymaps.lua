@@ -21,3 +21,14 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highl
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Goto previous [D]iagnostic" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Goto next [D]iagnostic" })
 
+
+-- Autocommands
+local general_group = vim.api.nvim_create_augroup("general-commands", { clear = true })
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = "Highlight when yanking (copying) text",
+  group = general,
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
