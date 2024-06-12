@@ -15,4 +15,3 @@ require("preferences.settings")
 require("lazy").setup("plugins")
 
 require("preferences.keymaps")
-require("preferences.auto_commands")
