@@ -58,31 +58,27 @@ return {
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-		local servers = {
-			basedpyright = {},
-			rust_analyzer = {},
-			lua_ls = {
-				settings = {
-					Lua = {
-						completion = {
-							callsnippet = "Replace",
-						},
-						diagnostics = { disable = { "missing-fields" }},
-					}
-				}
-			},
-		}
+
+		-- Set up LSPs
 		require("mason").setup()
-		require('mason-lspconfig').setup {
-			handlers = {
-				function(server_name)
-					local server = servers[server_name] or {}
-					server.capabilities = vim.tbl_deep_extend(
-						'force', {}, capabilities, server.capabilities or {}
-					)
-					require('lspconfig')[server_name].setup(server)
-				end,
-			},
+		require("mason-lspconfig").setup({})
+
+		-- Lua
+		require("lspconfig").lua_ls.setup({
+			settings = {
+				Lua = {
+					completion = {
+						callsnippet = "Replace",
+					},
+					diagnostics = { disable = { "missing-fields" }},
+				}
+			}
+		})
+		-- Python 
+		require("lspconfig").basedpyright.setup({})
+		-- Rust analyzer
+		require('mason-lspconfig').setup_handlers {
+			['rust_analyzer'] = function() end,
 		}
 	end,
 }
