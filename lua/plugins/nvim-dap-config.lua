@@ -69,10 +69,10 @@ return {
 		vim.keymap.set("n", "<leader>du", function() require("dap").step_out() end, { desc = "Dap step out ([u]pper)" })
 		vim.keymap.set("n", "<leader>dB", function()
 			require("dap").set_breakpoint(vim.fn.input('Breakpoint Condition: '))
-		end, { desc = "Dap toggle conditional [b]reakpoint" })
+			end, { desc = "Dap toggle conditional [b]reakpoint" })
 		vim.keymap.set("n", "<leader>dl", function()
 			require("dap").set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
-		end, { desc = "Dap [l]og point message" })
+			end, { desc = "Dap [l]og point message" })
 
 	end
 }

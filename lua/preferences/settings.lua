@@ -32,10 +32,6 @@ vim.opt.hlsearch = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Coloring
--- vim.opt.termguicolors = true
--- vim.cmd("set background=dark")
-
 -- Scroll
 vim.opt.scrolloff = 10
 
@@ -47,7 +43,7 @@ vim.opt.grepprg = "rg --hidden --vimgrep --smart-case --"
 vim.opt.completeopt = "menuone,noselect"
 
 -- Disable the mouse
-vim.opt.mouse = nil
+vim.opt.mouse = ""
 
 -- Set shell
 vim.opt.shell = "zsh"
