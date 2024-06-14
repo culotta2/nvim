@@ -19,6 +19,7 @@ return {
 		},
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
 		"saadparwaiz1/cmp_luasnip",
 	},
 	config = function()
@@ -39,7 +40,7 @@ return {
 				['<C-p>'] = cmp.mapping.select_prev_item(),
 				['<C-d>'] = cmp.mapping.scroll_docs(-4),
 				['<C-f>'] = cmp.mapping.scroll_docs(4),
-				['<C-Space>'] = cmp.mapping.complete(),
+				['<C-.>'] = cmp.mapping.complete(),
 				['<C-y>'] = cmp.mapping.confirm {
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = true,
@@ -61,6 +62,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
+				{ name = "nvim_lsp_signature_help" },
 			},
 		})
 	end,
