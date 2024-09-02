@@ -74,14 +74,18 @@ return {
 				}
 			}
 		})
-		-- Python 
+		-- Python
 		require("lspconfig").basedpyright.setup({})
+
 		-- Rust analyzer
 		require('mason-lspconfig').setup_handlers {
 			['rust_analyzer'] = function() end,
 		}
 
 		-- SQL
-		require("lspconfig").sqls.setup({}) 
+		require("lspconfig").sqls.setup({})
+
+		-- Markdown
+		require("lspconfig").marksman.setup({})
 	end,
 }
