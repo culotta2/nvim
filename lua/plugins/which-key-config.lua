@@ -1,7 +1,14 @@
 return {
 	"folke/which-key.nvim",
 	event = "VimEnter",
-	config = function()
-		require("which-key").setup()
-	end,
+	opts = {},
+	keys = {
+		{
+			"<leader>?",
+			function()
+				require("which-key").show({ global = false })
+			end,
+			desc = "Buffer Local Keymaps"
+		}
+	}
 }
