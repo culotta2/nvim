@@ -25,7 +25,7 @@ return {
 		local builtin = require("telescope.builtin")
 
 		-- Function to run when the LSP is attached
-		vim.api.nvim_create_autocmd('LspAttach', {
+		vim.api.nvim_create_autocmd("LspAttach", {
 			group = lsp_group,
 			callback = function(args)
 				-- LSP Keymaps
@@ -57,7 +57,7 @@ return {
 		})
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		-- Set up LSPs
 		require("mason").setup()
@@ -78,8 +78,8 @@ return {
 		require("lspconfig").basedpyright.setup({})
 
 		-- Rust analyzer
-		require('mason-lspconfig').setup_handlers {
-			['rust_analyzer'] = function() end,
+		require("mason-lspconfig").setup_handlers {
+			["rust_analyzer"] = function() end,
 		}
 
 		-- SQL

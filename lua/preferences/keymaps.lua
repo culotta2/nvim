@@ -1,5 +1,5 @@
 -- Turn off space when used by itself
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Copy & paste with system clipboard
 vim.keymap.set("n", "<leader>cy", "\"+yy", { desc = "[Y]ank current line"})
@@ -25,7 +25,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Goto next [D]iagno
 -- Autocommands
 local general_group = vim.api.nvim_create_augroup("general-commands", { clear = true })
 
-vim.api.nvim_create_autocmd('TextYankPost', {
+vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = general,
   callback = function()

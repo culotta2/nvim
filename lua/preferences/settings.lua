@@ -1,12 +1,12 @@
 -- General
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 vim.opt.cursorline = true
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 vim.opt.showmode = false
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.undofile = true
 
 vim.opt.updatetime = 250
@@ -15,7 +15,7 @@ vim.opt.timeoutlen = 300
 
 -- Display characters
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Numbers
 vim.opt.relativenumber = true

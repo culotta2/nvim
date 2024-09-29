@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects"
 	},
-	build = ':TSUpdate',
+	build = ":TSUpdate",
 	main = "nvim-treesitter.configs",
 	opts = {
 		ensure_installed = {
