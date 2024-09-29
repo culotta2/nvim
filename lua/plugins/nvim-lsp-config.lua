@@ -87,5 +87,12 @@ return {
 
 		-- Markdown
 		require("lspconfig").marksman.setup({})
+
+		-- Typst
+		require("lspconfig").typst_lsp.setup({
+			settings = {
+				exportPdf = "onSave", -- onType, never
+			}
+		})
 	end,
 }
