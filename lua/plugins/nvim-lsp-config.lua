@@ -89,7 +89,7 @@ return {
 		require("lspconfig").marksman.setup({})
 
 		-- Typst
-		require("lspconfig").typst_lsp.setup({
+		require("lspconfig").tinymist.setup({
 			settings = {
 				exportPdf = "onSave", -- onType, never
 			}
