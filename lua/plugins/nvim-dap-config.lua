@@ -1,7 +1,6 @@
 return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
-		"folke/neodev.nvim",
 		"rcarriga/nvim-dap-ui",
 		-- DAPs
 		"mfussenegger/nvim-dap-python",
@@ -9,10 +8,6 @@ return {
 	},
 
 	config = function()
-		require("neodev").setup({
-			library = { plugins = { "nvim-dap-ui" }, types = true }
-		})
-
 		require("dapui").setup()
 
 		-- Configure dapui to toggle when dap is initialized or terminated

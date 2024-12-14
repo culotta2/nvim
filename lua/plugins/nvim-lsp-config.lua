@@ -11,9 +11,6 @@ return {
 		-- Status updates for LSP
 		{ "j-hui/fidget.nvim", opts = {} },
 
-		-- Additional lua configuration
-		{ "folke/neodev.nvim", opts = {} },
-
 		-- Autocomplete
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
