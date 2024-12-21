@@ -16,6 +16,6 @@ return {
 	keys = {
 		{ "<leader>nd", function() Snacks.notifier.hide() end, desc = "[N]otifications: [d]ismiss all" },
 		{ "<leader>nh", function() Snacks.notifier.show_history() end, desc = "[N]otifications: show [h]istory" },
-		{ "<leader>z", function() Snacks.zen() end, desc = "Dismiss all notifications" },
+		{ "<leader>z", function() Snacks.zen() end, desc = "Toggle [z]en mode" },
 	},
 }
