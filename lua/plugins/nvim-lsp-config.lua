@@ -20,6 +20,7 @@ return {
 	config = function()
 		local lsp_group = vim.api.nvim_create_augroup("lsp_group", { clear = true })
 		local builtin = require("telescope.builtin")
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		-- Function to run when the LSP is attached
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -53,15 +54,13 @@ return {
 			end,
 		})
 
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
 		-- Set up LSPs
 		require("mason").setup()
 		require("mason-lspconfig").setup({})
 
 		-- Lua
 		require("lspconfig").lua_ls.setup({
+			capabilities = capabilities,
 			settings = {
 				Lua = {
 					completion = {
@@ -72,7 +71,9 @@ return {
 			}
 		})
 		-- Python
-		require("lspconfig").basedpyright.setup({})
+		require("lspconfig").basedpyright.setup({
+			capabilities = capabilities,
+		})
 
 		-- Rust analyzer
 		require("mason-lspconfig").setup_handlers {
@@ -80,13 +81,18 @@ return {
 		}
 
 		-- SQL
-		require("lspconfig").sqls.setup({})
+		require("lspconfig").sqls.setup({
+			capabilities = capabilities,
+		})
 
 		-- Markdown
-		require("lspconfig").marksman.setup({})
+		require("lspconfig").marksman.setup({
+			capabilities = capabilities,
+		})
 
 		-- Typst
 		require("lspconfig").tinymist.setup({
+			capabilities = capabilities,
 			settings = {
 				exportPdf = "onSave", -- onType, never
 			}
