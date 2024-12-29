@@ -14,17 +14,9 @@ return {
 		{ "williamboman/mason.nvim", config = true },
 		"williamboman/mason-lspconfig.nvim",
 
-		-- Visuals
-		-- "onsails/lspkind.nvim",
-
 		-- Status updates for LSP
 		{ "j-hui/fidget.nvim", opts = {} },
 
-		-- Autocomplete
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-nvim-lsp",
-		-- "L3MON4D3/LuaSnip",
-		-- "saadparwaiz1/cmp_luasnip",
 	},
 	config = function()
 		local lsp_group = vim.api.nvim_create_augroup("lsp_group", { clear = true })
