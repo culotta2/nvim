@@ -46,5 +46,5 @@ vim.opt.completeopt = "menuone,noselect"
 vim.opt.mouse = ""
 
 -- Set shell
-vim.opt.shell = "zsh"
+vim.opt.shell = "nu"
 

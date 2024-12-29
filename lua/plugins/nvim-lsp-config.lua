@@ -1,6 +1,15 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		"saghen/blink.cmp",
+		{
+			"folke/lazydev.nvim",
+			opts = {
+				library = {
+					{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+				},
+			},
+		},
 		-- Automatically install LSPs
 		{ "williamboman/mason.nvim", config = true },
 		"williamboman/mason-lspconfig.nvim",
