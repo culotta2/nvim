@@ -16,4 +16,10 @@ return {
 			pattern = [[\b(KEYWORDS)(:|!\()]],
 		},
 	},
+	keys = {
+		{ "<leader>st", function() Snacks.picker.todo_comments() end, desc = "[S]earch [t]odos" },
+		{ "<leader>sT", function() Snacks.picker.todo_comments({
+			keywords = { "TODO", "FIX", "FIXME", "PERF" },
+		}) end, desc = "[S]earch [t]odos" },
+	}
 }
