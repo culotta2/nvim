@@ -37,10 +37,16 @@ return {
 		input = { enabled = true },
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
+		scratch = {
+			enabled = true,
+			ft = "markdown",
+		},
 		toggle = { enabled = true },
 		zen = { enabled = true },
 	},
 	keys = {
+		{ "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+		{ "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
 		{ "<leader>nd", function() Snacks.notifier.hide() end, desc = "[N]otifications: [d]ismiss all" },
 		{ "<leader>nh", function() Snacks.notifier.show_history() end, desc = "[N]otifications: show [h]istory" },
 		{ "<leader>z", function() Snacks.zen() end, desc = "Toggle [z]en mode" },
